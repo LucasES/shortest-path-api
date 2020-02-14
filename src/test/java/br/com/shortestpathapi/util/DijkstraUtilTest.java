@@ -6,6 +6,10 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 /**
@@ -45,8 +49,11 @@ public class DijkstraUtilTest {
 
     @Test
     public void testDijkstraUtil() {
-        Graph graph = DijkstraUtil.calculateShortestPathFromSource(this.graph, nodeInitial);
+        DijkstraUtil.calculateShortestPathFromSource(this.graph, nodeInitial);
+        List<Node> nodeList = new ArrayList<>(this.graph.getNodes());
 
-        assertNotNull(graph, "The graph could not be null!");
+        Node actual = nodeList.get(0);
+        assertNotNull(actual, "Should not be null!");
+        assertNotEquals(Integer.MAX_VALUE, actual.getDistance(), "Should be different distance!");
     }
 }
