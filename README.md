@@ -61,6 +61,22 @@ http://localhost:8080/shortest-path-api/swagger-ui.html
 |  URL |  Método | 
 |----------|--------------|
 |`http://localhost:8080/shortest-path-api/v1/distance`                           | POST |
+
+### Request e Response
+
+Exemplo de entrada:
+`{  
+    "origem":"A",
+    "destino":"D",
+    "autonomia":"10",
+    "valor do litro":"2.50"
+}`
+
+Resposta:
+`{  
+    "rota":"A B D",
+    "custo":"6.25"
+}`
  
  ## Arquivos e diretórios
  
