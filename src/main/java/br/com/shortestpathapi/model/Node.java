@@ -1,13 +1,17 @@
 package br.com.shortestpathapi.model;
 
-import lombok.Data;
-
 import java.util.HashMap;
 import java.util.LinkedList;
-import java.util.Map;
 import java.util.List;
+import java.util.Map;
 
-@Data
+/**
+ * Classe responsável em mapear os atributos do objeto Node.
+ *
+ * @author Lucas Araújo - lucas.compufc@gmail.com
+ * @version 0.1
+ * @since 14/02/2020
+ */
 public class Node {
 
     private String name;
@@ -24,4 +28,35 @@ public class Node {
         this.name = name;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public List<Node> getShortestPath() {
+        return shortestPath;
+    }
+
+    public void setShortestPath(List<Node> shortestPath) {
+        this.shortestPath = shortestPath;
+    }
+
+    public Integer getDistance() {
+        return distance;
+    }
+
+    public void setDistance(Integer distance) {
+        this.distance = distance;
+    }
+
+    public Map<Node, Integer> getAdjacentNodes() {
+        return adjacentNodes;
+    }
+
+    public void setAdjacentNodes(Map<Node, Integer> adjacentNodes) {
+        this.adjacentNodes = adjacentNodes;
+    }
 }

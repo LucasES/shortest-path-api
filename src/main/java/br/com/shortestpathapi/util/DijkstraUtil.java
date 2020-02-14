@@ -1,20 +1,25 @@
-package br.com.shortestpathapi.service.impl;
+package br.com.shortestpathapi.util;
 
 import br.com.shortestpathapi.model.Graph;
 import br.com.shortestpathapi.model.Node;
-import br.com.shortestpathapi.service.IShortestPath;
-import org.springframework.stereotype.Service;
 
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.Map;
 import java.util.Set;
 
-@Service
-public class ShortestPathImpl implements IShortestPath {
+/**
+ * Util responsável em centraliar o algoritmo de dijkstra.
+ *
+ * @author Lucas Araújo - lucas.compufc@gmail.com
+ * @version 0.1
+ * @since 14/02/2020
+ */
+public class DijkstraUtil {
 
-    @Override
-    public Graph shortestPath(Graph graph, Node source) {
+    private DijkstraUtil() {throw new UnsupportedOperationException();}
+
+    public static Graph calculateShortestPathFromSource(Graph graph, Node source) {
         source.setDistance(0);
 
         Set<Node> settledNodes = new HashSet<>();
@@ -30,7 +35,7 @@ public class ShortestPathImpl implements IShortestPath {
                 Node adjacentNode = adjacencyPair.getKey();
                 Integer edgeWeight = adjacencyPair.getValue();
                 if (!settledNodes.contains(adjacentNode)) {
-                    calculateMinimumDistance(adjacentNode, edgeWeight, currentNode);
+                    CalculateMinimumDistance(adjacentNode, edgeWeight, currentNode);
                     unsettledNodes.add(adjacentNode);
                 }
             }
@@ -39,7 +44,7 @@ public class ShortestPathImpl implements IShortestPath {
         return graph;
     }
 
-    private static Node getLowestDistanceNode(Set < Node > unsettledNodes) {
+    private static Node getLowestDistanceNode(Set< Node > unsettledNodes) {
         Node lowestDistanceNode = null;
         int lowestDistance = Integer.MAX_VALUE;
         for (Node node: unsettledNodes) {
@@ -52,7 +57,7 @@ public class ShortestPathImpl implements IShortestPath {
         return lowestDistanceNode;
     }
 
-    private static void calculateMinimumDistance(Node evaluationNode,
+    private static void CalculateMinimumDistance(Node evaluationNode,
                                                  Integer edgeWeigh, Node sourceNode) {
         Integer sourceDistance = sourceNode.getDistance();
         if (sourceDistance + edgeWeigh < evaluationNode.getDistance()) {
@@ -62,4 +67,5 @@ public class ShortestPathImpl implements IShortestPath {
             evaluationNode.setShortestPath(shortestPath);
         }
     }
+
 }
