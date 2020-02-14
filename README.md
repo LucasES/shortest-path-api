@@ -65,6 +65,8 @@ http://localhost:8080/shortest-path-api/swagger-ui.html
 ### Request e Response
 
 Exemplo de entrada:
+
+
 `{  
     "origem":"A",
     "destino":"D",
@@ -73,6 +75,8 @@ Exemplo de entrada:
 }`
 
 Resposta:
+
+
 `{  
     "rota":"A B D",
     "custo":"6.25"
@@ -96,6 +100,7 @@ Resposta:
  │           ├── br.com.shortestpathapi.model
  │           ├── br.com.shortestpathapi.repository
  │           └── br.com.shortestpathapi.service
+ │           └── br.com.shortestpathapi.util
  ├── src
  │   └── main
  │       └── resources
@@ -120,6 +125,7 @@ Resposta:
 - `models` — Camada de modelo responsável em centralizar as entidades do projeto;
 - `repositories` — Camada responsável para se comunicar com o banco de dados;
 - `services` — Camada responsável em centralizar a lógica de negócio do sistema;
+- `util` — Pacote responsável em centralizar os códigos utilitários usados no projeto.
 - `controllers` — Camada responsável em externalizar as API's;
 - `resources/` - Contém todos os recursos estáticos, modelos e arquivos de propriedades.
 - `resources/application.properties` - Ele contém propriedades para todo o aplicativo. O Spring lê as propriedades definidas neste arquivo para configurar seu aplicativo. Você pode definir a porta padrão do servidor, o caminho de contexto do servidor, os URLs do banco de dados etc., neste arquivo.
