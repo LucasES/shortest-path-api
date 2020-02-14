@@ -20,6 +20,7 @@ A API irá retornar a rota que terá menor custo entre dois pontos.
 ## Ferramentas externas
 
 * [Postman](https://www.getpostman.com/) - API Development Environment (Testing Docmentation)
+* [IntelliJ IDEA](https://www.jetbrains.com/idea/download) - Java IDEA
 
 ### Pré-requisitos
 
@@ -63,7 +64,7 @@ http://localhost:8080/shortest-path-api/swagger-ui.html
  
  ## Arquivos e diretórios
  
- O projeto shortest-path-api possui uma estrutura de diretórios específica. 
+ O projeto `shortest-path-api` possui uma estrutura de diretórios específica. 
  
  Um projeto representativo é representado abaixo:
  
@@ -84,7 +85,6 @@ http://localhost:8080/shortest-path-api/swagger-ui.html
  │       └── resources
  │           ├── application.properties
  │           ├── banner.txt
- │           └── log4j2.xml
  ├── src
  │   └── test
  │       └── java
