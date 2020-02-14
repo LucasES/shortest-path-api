@@ -42,7 +42,7 @@ Ou acessar a URL: https://github.com/LucasES/shortest-path-api e realizar o down
 
 Existem várias maneiras de executar um aplicativo Spring Boot em sua máquina local. Uma maneira é executar o método `main` na classe `br.com.shortestpathapi.ShortestPathApiApplication` do IDE.
 
-Como alternativa, você pode usar o [Spring Boot Maven plugin](https://docs.spring.io/spring-boot/docs/current/reference/html/build-tool-plugins-maven-plugin.html) e executar o seguinte comando:
+Como alternativa, você pode usar o [Spring Boot Maven plugin](https://docs.spring.io/spring-boot/docs/current/reference/html/build-tool-plugins-maven-plugin.html) e executar o seguinte comando na pasta do projeto onde localiza-se o arquivo pom.xml:
 
 ```shell
 mvn spring-boot:run
